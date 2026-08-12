@@ -3,144 +3,532 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="theme-color" content="#080808">
-  <meta name="description" content="Rickshaw themed music experience">
-  <title>टूक वाला — Rickshaw Music</title>
+  <meta
+    name="description"
+    content="Rickshaw themed music experience"
+  >
+
+  <title>रिक्शा वाला — Rickshaw Music</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div id="app">
 
-    <div class="background-layer" id="backgroundLayer"></div>
-    <div class="gradient-layer"></div>
-    <div class="grain"></div>
+<div id="app">
 
-    <header class="topbar">
-      <div class="clock" id="clock">--:--</div>
+  <!-- Background -->
+  <div class="background-layer" id="backgroundLayer"></div>
+  <div class="gradient-layer"></div>
+  <div class="grain"></div>
 
-      <div class="highway-status">
-        <span class="status-dot"></span>
-        <strong id="listenerCount">631</strong>
-        <span>on the highway</span>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+
+    <div class="clock" id="clock">
+      --:--
+    </div>
+
+    <div class="highway-status">
+      <span class="status-dot"></span>
+
+      <strong id="listenerCount">
+        631
+      </strong>
+
+      <span>
+        on the highway
+      </span>
+    </div>
+
+    <button
+      class="icon-btn top-play"
+      id="soundToggle"
+      aria-label="Sound"
+    >
+      <span id="soundIcon">▶</span>
+    </button>
+
+  </header>
+
+
+  <!-- HERO -->
+  <main class="hero">
+
+    <div class="brand-area">
+
+      <!-- MINI BRAND -->
+      <div class="mini-badge">
+
+        <div class="mini-speaker">
+          ◖
+        </div>
+
+        <span>
+
+          <b>
+            हॉर्न ओके प्लीज़
+          </b>
+
+          <small>
+            Horn ok pleaseee
+          </small>
+
+        </span>
+
       </div>
 
-      <button class="icon-btn top-play" id="soundToggle" aria-label="Sound">
-        <span id="soundIcon">▶</span>
-      </button>
-    </header>
 
-    <main class="hero">
-      <div class="brand-area">
-        <div class="mini-badge">
-          <span class="mini-speaker">◖</span>
-          <span>
-            <b>हॉर्न ओके प्लीज़</b>
-            <small>Horn ok pleaseee</small>
+      <!-- MAIN NAME -->
+      <h1>
+        रिक्शा वाला
+      </h1>
+
+
+      <!-- TAGLINE -->
+      <p
+        class="tagline"
+        id="tagline"
+      >
+        किस्मत तेजी दस्ती है, घर में मधुरा काशी है।
+      </p>
+
+    </div>
+
+
+    <!-- RICKSHAW VISUAL -->
+    <div
+      class="rickshaw-visual"
+      aria-hidden="true"
+    >
+
+      <div class="road-glow"></div>
+
+      <div class="rickshaw">
+
+        <div class="rickshaw-roof"></div>
+
+        <div class="rickshaw-cabin">
+
+          <div class="rickshaw-window"></div>
+
+          <div class="rickshaw-seat"></div>
+
+        </div>
+
+        <div class="rickshaw-front"></div>
+
+        <div class="wheel wheel-left"></div>
+
+        <div class="wheel wheel-right"></div>
+
+        <div class="headlight"></div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- SIDE ACTION BUTTONS -->
+  <aside class="side-actions">
+
+    <!-- HOME -->
+    <button
+      class="side-btn active"
+      id="homeBtn"
+      title="Home"
+    >
+
+      <span>
+        ⌂
+      </span>
+
+      <em>
+        HOME
+      </em>
+
+    </button>
+
+
+    <!-- PLAYLIST -->
+    <button
+      class="side-btn"
+      id="playlistBtn"
+      title="Playlist"
+    >
+
+      <span>
+        ♫
+      </span>
+
+      <em>
+        PLAYLIST
+      </em>
+
+    </button>
+
+
+    <!-- SHUFFLE -->
+    <button
+      class="side-btn"
+      id="shuffleBtn"
+      title="Shuffle"
+    >
+
+      <span>
+        ⤨
+      </span>
+
+      <em>
+        SHUFFLE
+      </em>
+
+    </button>
+
+
+    <!-- FULLSCREEN -->
+    <button
+      class="side-btn"
+      id="fullscreenBtn"
+      title="Fullscreen"
+    >
+
+      <span>
+        ⛶
+      </span>
+
+      <em>
+        FULL
+      </em>
+
+    </button>
+
+  </aside>
+
+
+  <!-- PLAYLIST PANEL -->
+  <section
+    class="playlist-panel"
+    id="playlistPanel"
+  >
+
+    <div class="panel-head">
+
+      <div>
+
+        <small>
+          MUSIC CONFIG
+        </small>
+
+        <h2>
+          Highway Playlists
+        </h2>
+
+      </div>
+
+      <button
+        class="close-btn"
+        id="closePlaylist"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div
+      class="playlist-list"
+      id="playlistList"
+    ></div>
+
+
+    <p class="panel-note">
+
+      Playlist IDs
+
+      <b>
+        music-config.js
+      </b>
+
+      में डालें।
+
+    </p>
+
+  </section>
+
+
+  <!-- ========================= -->
+  <!-- MUSIC PLAYER -->
+  <!-- ========================= -->
+
+  <section
+    class="player"
+    id="player"
+  >
+
+
+    <!-- NOW PLAYING -->
+    <div class="now-playing">
+
+      <div class="cover-wrap">
+
+        <img
+          id="coverArt"
+          src="images/default.svg"
+          alt="Album art"
+        >
+
+        <div class="cover-wave"></div>
+
+      </div>
+
+
+      <div class="track-meta">
+
+        <span class="eyebrow">
+          NOW PLAYING
+        </span>
+
+        <h2 id="trackTitle">
+          Highway Loading...
+        </h2>
+
+        <p id="trackArtist">
+          Rickshaw Radio
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- PLAYER MAIN -->
+    <div class="player-main">
+
+
+      <!-- PROGRESS -->
+      <div class="progress-row">
+
+        <span id="currentTime">
+          0:00
+        </span>
+
+
+        <div
+          class="progress-track"
+          id="progressTrack"
+        >
+
+          <div
+            class="progress-fill"
+            id="progressFill"
+          ></div>
+
+          <div
+            class="progress-knob"
+            id="progressKnob"
+          ></div>
+
+        </div>
+
+
+        <span id="duration">
+          0:00
+        </span>
+
+      </div>
+
+
+      <!-- CONTROLS -->
+      <div class="controls">
+
+
+        <!-- REPEAT -->
+        <button
+          class="control-btn small"
+          id="repeatBtn"
+          title="Repeat"
+          aria-label="Repeat"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path d="M17 2l4 4-4 4"></path>
+
+            <path d="M3 11V9a3 3 0 0 1 3-3h15"></path>
+
+            <path d="M7 22l-4-4 4-4"></path>
+
+            <path d="M21 13v2a3 3 0 0 1-3 3H3"></path>
+
+          </svg>
+
+        </button>
+
+
+        <!-- PREVIOUS SONG -->
+        <button
+          class="control-btn"
+          id="prevBtn"
+          title="Previous Song"
+          aria-label="Previous Song"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path d="M6 5v14"></path>
+
+            <path d="M19 6l-9 6 9 6z"></path>
+
+          </svg>
+
+        </button>
+
+
+        <!-- PLAY / PAUSE -->
+        <button
+          class="control-btn play-main"
+          id="playBtn"
+          title="Play/Pause"
+          aria-label="Play/Pause"
+        >
+
+          <span id="playIcon">
+            ▶
           </span>
-        </div>
 
-        <h1>टूक वाला</h1>
-        <p class="tagline" id="tagline">किस्मत तेजी दस्ती है, घर में मधुरा काशी है।</p>
+        </button>
+
+
+        <!-- NEXT SONG -->
+        <button
+          class="control-btn"
+          id="nextBtn"
+          title="Next Song"
+          aria-label="Next Song"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path d="M18 5v14"></path>
+
+            <path d="M5 6l9 6-9 6z"></path>
+
+          </svg>
+
+        </button>
+
+
+        <!-- MUTE -->
+        <button
+          class="control-btn small"
+          id="muteBtn"
+          title="Mute"
+          aria-label="Mute"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path d="M4 10v4h4l5 4V6l-5 4H4z"></path>
+
+            <path d="M17 9a5 5 0 0 1 0 6"></path>
+
+            <path d="M19.5 6.5a9 9 0 0 1 0 11"></path>
+
+          </svg>
+
+        </button>
+
       </div>
 
-      <div class="rickshaw-visual" aria-hidden="true">
-        <div class="road-glow"></div>
-        <div class="rickshaw">
-          <div class="rickshaw-roof"></div>
-          <div class="rickshaw-cabin">
-            <div class="rickshaw-window"></div>
-            <div class="rickshaw-seat"></div>
-          </div>
-          <div class="rickshaw-front"></div>
-          <div class="wheel wheel-left"></div>
-          <div class="wheel wheel-right"></div>
-          <div class="headlight"></div>
-        </div>
-      </div>
-    </main>
+    </div>
 
-    <aside class="side-actions">
-      <button class="side-btn active" id="homeBtn" title="Home">
-        <span>⌂</span><em>HOME</em>
-      </button>
-      <button class="side-btn" id="playlistBtn" title="Playlist">
-        <span>♫</span><em>PLAYLIST</em>
-      </button>
-      <button class="side-btn" id="shuffleBtn" title="Shuffle">
-        <span>⤨</span><em>SHUFFLE</em>
-      </button>
-      <button class="side-btn" id="fullscreenBtn" title="Fullscreen">
-        <span>⛶</span><em>FULL</em>
-      </button>
-    </aside>
 
-    <section class="playlist-panel" id="playlistPanel">
-      <div class="panel-head">
-        <div>
-          <small>MUSIC CONFIG</small>
-          <h2>Highway Playlists</h2>
-        </div>
-        <button class="close-btn" id="closePlaylist">×</button>
-      </div>
-      <div class="playlist-list" id="playlistList"></div>
-      <p class="panel-note">Playlist IDs <b>music-config/playlists.js</b> में डालें।</p>
-    </section>
+    <!-- VOLUME -->
+    <div class="volume">
 
-    <section class="player" id="player">
-      <div class="now-playing">
-        <div class="cover-wrap">
-          <img id="coverArt" src="images/default.svg" alt="Album art">
-          <div class="cover-wave"></div>
-        </div>
-        <div class="track-meta">
-          <span class="eyebrow">NOW PLAYING</span>
-          <h2 id="trackTitle">Highway Loading...</h2>
-          <p id="trackArtist">Rickshaw Radio</p>
-        </div>
-      </div>
+      <span>
+        VOL
+      </span>
 
-      <div class="player-main">
-        <div class="progress-row">
-          <span id="currentTime">0:00</span>
-          <div class="progress-track" id="progressTrack">
-            <div class="progress-fill" id="progressFill"></div>
-            <div class="progress-knob" id="progressKnob"></div>
-          </div>
-          <span id="duration">0:00</span>
-        </div>
+      <input
+        id="volumeSlider"
+        type="range"
+        min="0"
+        max="100"
+        value="80"
+      >
 
-        <div class="controls">
-          <button class="control-btn small" id="repeatBtn" title="Repeat">↻</button>
-          <button class="control-btn" id="prevBtn" title="Previous">|◀</button>
-          <button class="control-btn play-main" id="playBtn" title="Play/Pause">
-            <span id="playIcon">▶</span>
-          </button>
-          <button class="control-btn" id="nextBtn" title="Next">▶|</button>
-          <button class="control-btn small" id="muteBtn" title="Mute">◖</button>
-        </div>
-      </div>
+    </div>
 
-      <div class="volume">
-        <span>VOL</span>
-        <input id="volumeSlider" type="range" min="0" max="100" value="80">
-      </div>
-    </section>
+  </section>
 
-    <div class="youtube-host" id="youtubeHost" aria-hidden="true"></div>
 
-    <div class="toast" id="toast"></div>
+  <!-- HIDDEN YOUTUBE PLAYER -->
+  <div
+    class="youtube-host"
+    id="youtubeHost"
+    aria-hidden="true"
+  ></div>
 
-    <footer class="footer">
-      <span>RICKSHAW RADIO</span>
-      <span>•</span>
-      <span id="playlistLabel">RANDOM HIGHWAY MIX</span>
-    </footer>
-  </div>
 
-  <script src="music-config.js"></script>
-  <script src="app.js"></script>
+  <!-- TOAST -->
+  <div
+    class="toast"
+    id="toast"
+  ></div>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <span>
+      RICKSHAW RADIO
+    </span>
+
+    <span>
+      •
+    </span>
+
+    <span id="playlistLabel">
+      RANDOM HIGHWAY MIX
+    </span>
+
+  </footer>
+
+</div>
+
+
+<!-- MUSIC CONFIG -->
+<script src="music-config.js"></script>
+
+<!-- MAIN JAVASCRIPT -->
+<script src="app.js"></script>
+
 </body>
 </html>
