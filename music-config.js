@@ -1,25 +1,11 @@
-/*
-  MUSIC CONFIG
-  -------------
-  Yahan apni YouTube playlist IDs add karo.
-
-  Example:
-  {
-    id: "PLxxxxxxxxxxxxxxxx",
-    name: "Desi Highway",
-    subtitle: "Hindi / Road Trip"
-  }
-
-  Playlist ID YouTube playlist URL ke ?list= ke baad wala part hota hai.
-*/
 window.MUSIC_CONFIG = {
   playlists: [
-  {
-    id: "PLeatb7hupNV_AWUl_7ttbsKeCQh8tF5N4",
-    name: "My Highway Playlist",
-    subtitle: "YouTube Music"
-  }
-],
+    {
+      id: "PLeatb7hupNV_AWUl_7ttbsKeCQh8tF5N4",
+      name: "My Highway Playlist",
+      subtitle: "YouTube Music"
+    },
+
     {
       id: "PLyyyyyyyyyyyyyyyy",
       name: "Rickshaw Nights",
@@ -27,16 +13,13 @@ window.MUSIC_CONFIG = {
     }
   ],
 
-  // Background images ke relative paths.
-  // Apni JPG/PNG/WebP files assets/backgrounds/ me rakho.
   backgrounds: [
-    "images/bg-01.svg",
-    "images/bg-02.svg",
-    "images/bg-03.svg",
-    "images/bg-04.svg"
+    "bg-01.svg",
+    "bg-02.svg",
+    "bg-03.svg",
+    "bg-04.svg"
   ],
 
-  // Screen par dikhne wali random lines.
   taglines: [
     "किस्मत तेजी दस्ती है, घर में मधुरा काशी है।",
     "रास्ता अपना है, सफ़र अपना है।",
@@ -45,9 +28,7 @@ window.MUSIC_CONFIG = {
     "जहाँ सड़क खत्म, वहाँ सफ़र शुरू।"
   ],
 
-  // true = playlist ke songs random order me.
   shuffle: true,
 
-  // true = song khatam hone par next song.
   autoplayNext: true
 };
