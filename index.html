@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="theme-color" content="#080808">
+
   <meta
     name="description"
     content="Rickshaw themed music experience"
@@ -27,20 +28,36 @@
 
 <div id="app">
 
-  <!-- Background -->
-  <div class="background-layer" id="backgroundLayer"></div>
+  <!-- =========================
+       BACKGROUND
+  ========================== -->
+
+  <div
+    class="background-layer"
+    id="backgroundLayer"
+  ></div>
+
   <div class="gradient-layer"></div>
+
   <div class="grain"></div>
 
 
-  <!-- TOP BAR -->
+  <!-- =========================
+       TOP BAR
+  ========================== -->
+
   <header class="topbar">
 
-    <div class="clock" id="clock">
+    <div
+      class="clock"
+      id="clock"
+    >
       --:--
     </div>
 
+
     <div class="highway-status">
+
       <span class="status-dot"></span>
 
       <strong id="listenerCount">
@@ -50,53 +67,39 @@
       <span>
         on the highway
       </span>
+
     </div>
+
 
     <button
       class="icon-btn top-play"
       id="soundToggle"
       aria-label="Sound"
+      title="Sound"
     >
-      <span id="soundIcon">▶</span>
+
+      <span id="soundIcon">
+        ▶
+      </span>
+
     </button>
 
   </header>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================== -->
+
   <main class="hero">
 
     <div class="brand-area">
 
-      <!-- MINI BRAND -->
-      <div class="mini-badge">
-
-        <div class="mini-speaker">
-          ◖
-        </div>
-
-        <span>
-
-          <b>
-            हॉर्न ओके प्लीज़
-          </b>
-
-          <small>
-            Horn ok pleaseee
-          </small>
-
-        </span>
-
-      </div>
-
-
-      <!-- MAIN NAME -->
       <h1>
         रिक्शा वाला
       </h1>
 
 
-      <!-- TAGLINE -->
       <p
         class="tagline"
         id="tagline"
@@ -107,7 +110,10 @@
     </div>
 
 
-    <!-- RICKSHAW VISUAL -->
+    <!-- =========================
+         RICKSHAW IMAGE
+    ========================== -->
+
     <div
       class="rickshaw-visual"
       aria-hidden="true"
@@ -115,59 +121,31 @@
 
       <div class="road-glow"></div>
 
-      <div class="rickshaw">
-
-        <div class="rickshaw-roof"></div>
-
-        <div class="rickshaw-cabin">
-
-          <div class="rickshaw-window"></div>
-
-          <div class="rickshaw-seat"></div>
-
-        </div>
-
-        <div class="rickshaw-front"></div>
-
-        <div class="wheel wheel-left"></div>
-
-        <div class="wheel wheel-right"></div>
-
-        <div class="headlight"></div>
-
-      </div>
+      <img
+        src="images/rickshaw.png"
+        class="rickshaw-image"
+        alt=""
+      >
 
     </div>
 
   </main>
 
 
-  <!-- SIDE ACTION BUTTONS -->
+  <!-- =========================
+       SIDE BUTTONS
+  ========================== -->
+
   <aside class="side-actions">
-
-    <!-- HOME -->
-    <button
-      class="side-btn active"
-      id="homeBtn"
-      title="Home"
-    >
-
-      <span>
-        ⌂
-      </span>
-
-      <em>
-        HOME
-      </em>
-
-    </button>
 
 
     <!-- PLAYLIST -->
+
     <button
       class="side-btn"
       id="playlistBtn"
       title="Playlist"
+      aria-label="Playlist"
     >
 
       <span>
@@ -182,10 +160,12 @@
 
 
     <!-- SHUFFLE -->
+
     <button
       class="side-btn"
       id="shuffleBtn"
       title="Shuffle"
+      aria-label="Shuffle"
     >
 
       <span>
@@ -200,10 +180,12 @@
 
 
     <!-- FULLSCREEN -->
+
     <button
       class="side-btn"
       id="fullscreenBtn"
       title="Fullscreen"
+      aria-label="Fullscreen"
     >
 
       <span>
@@ -219,7 +201,10 @@
   </aside>
 
 
-  <!-- PLAYLIST PANEL -->
+  <!-- =========================
+       PLAYLIST PANEL
+  ========================== -->
+
   <section
     class="playlist-panel"
     id="playlistPanel"
@@ -239,9 +224,11 @@
 
       </div>
 
+
       <button
         class="close-btn"
         id="closePlaylist"
+        aria-label="Close"
       >
         ×
       </button>
@@ -270,9 +257,9 @@
   </section>
 
 
-  <!-- ========================= -->
-  <!-- MUSIC PLAYER -->
-  <!-- ========================= -->
+  <!-- =========================
+       MUSIC PLAYER
+  ========================== -->
 
   <section
     class="player"
@@ -281,6 +268,7 @@
 
 
     <!-- NOW PLAYING -->
+
     <div class="now-playing">
 
       <div class="cover-wrap">
@@ -315,11 +303,15 @@
     </div>
 
 
-    <!-- PLAYER MAIN -->
+    <!-- =========================
+         PLAYER MAIN
+    ========================== -->
+
     <div class="player-main">
 
 
       <!-- PROGRESS -->
+
       <div class="progress-row">
 
         <span id="currentTime">
@@ -337,6 +329,7 @@
             id="progressFill"
           ></div>
 
+
           <div
             class="progress-knob"
             id="progressKnob"
@@ -352,11 +345,15 @@
       </div>
 
 
-      <!-- CONTROLS -->
+      <!-- =========================
+           MUSIC CONTROLS
+      ========================== -->
+
       <div class="controls">
 
 
         <!-- REPEAT -->
+
         <button
           class="control-btn small"
           id="repeatBtn"
@@ -382,7 +379,8 @@
         </button>
 
 
-        <!-- PREVIOUS SONG -->
+        <!-- PREVIOUS -->
+
         <button
           class="control-btn"
           id="prevBtn"
@@ -405,6 +403,7 @@
 
 
         <!-- PLAY / PAUSE -->
+
         <button
           class="control-btn play-main"
           id="playBtn"
@@ -419,7 +418,8 @@
         </button>
 
 
-        <!-- NEXT SONG -->
+        <!-- NEXT -->
+
         <button
           class="control-btn"
           id="nextBtn"
@@ -442,6 +442,7 @@
 
 
         <!-- MUTE -->
+
         <button
           class="control-btn small"
           id="muteBtn"
@@ -469,7 +470,10 @@
     </div>
 
 
-    <!-- VOLUME -->
+    <!-- =========================
+         VOLUME
+    ========================== -->
+
     <div class="volume">
 
       <span>
@@ -489,7 +493,10 @@
   </section>
 
 
-  <!-- HIDDEN YOUTUBE PLAYER -->
+  <!-- =========================
+       YOUTUBE PLAYER
+  ========================== -->
+
   <div
     class="youtube-host"
     id="youtubeHost"
@@ -497,14 +504,20 @@
   ></div>
 
 
-  <!-- TOAST -->
+  <!-- =========================
+       TOAST
+  ========================== -->
+
   <div
     class="toast"
     id="toast"
   ></div>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer class="footer">
 
     <span>
@@ -524,10 +537,17 @@
 </div>
 
 
-<!-- MUSIC CONFIG -->
+<!-- =========================
+     CONFIG
+========================== -->
+
 <script src="music-config.js"></script>
 
-<!-- MAIN JAVASCRIPT -->
+
+<!-- =========================
+     MAIN JS
+========================== -->
+
 <script src="app.js"></script>
 
 </body>
