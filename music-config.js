@@ -4,12 +4,6 @@ window.MUSIC_CONFIG = {
       id: "PLeatb7hupNV_AWUl_7ttbsKeCQh8tF5N4",
       name: "My Highway Playlist",
       subtitle: "YouTube Music"
-    },
-
-    {
-      id: "PLyyyyyyyyyyyyyyyy",
-      name: "Rickshaw Nights",
-      subtitle: "Second playlist"
     }
   ],
 
